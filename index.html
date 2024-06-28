@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style> 
+        .myDiv { 
+            width: 200px; 
+            height: 20px; 
+            cursor: pointer; 
+        } 
+    </style> 
+
+    <script> 
+        function applyStyles() { 
+            var div = document.getElementById("myDiv"); 
+            div.style.color = "red"; 
+            div.style.backgroundColor = "green"; 
+            div.style.fontWeight = "bold"; 
+            div.style.fontFamily = "Arial"; 
+            div.style.fontSize = "16px"; 
+            div.style.border = " 2px solid yellow";
+        }
+        function changeText() { 
+            var div = document.getElementById("myDiv"); 
+            div.innerHTML = "Text changed!"; 
+        }
+    </script>
+
+</head>
+<body>
+    <p>Фамилия Имя Отчество</p>
+    <div id="clickMe"  class="myDiv" onclick="applyStyles()">Ваша дата рождения</div>
+    <img src="Кот.jfif">
+
+    <!--
+    <script>
+        function getPageInfo() 
+            { 
+                var date = new Date(); 
+                var size = document.documentElement.outerHTML.length; 
+                document.writeln("Дата: " + date);
+                document.writeln("Размер страницы: " + size + " байт");
+            }
+            setInterval(getPageInfo, 3000);
+            // Удаляем <div> элемент при щелчке по нему 
+            document.getElementById('clickMe').addEventListener('click', (event) => { event.target.remove(); } );
+    </script>
+    -->
+
+    <script>
+        if (navigator.cookieEnabled) 
+        {
+            alert("Cookie включены на странице");
+        } 
+        else 
+        {
+            alert("Cookie не включены на странице");
+        }
+        /*/setTimeout(
+            function()
+                {
+                    window.close();
+                },
+            2000);/*/
+    </script>
+
+<form action="">
+    <div class="item item_5">
+        <div><img src="Снимок1.PNG"></div>
+        <div class="item_11">
+            <div class="item_12">Регистрация</div>
+            <input type="text" placeholder="login" onblur="validateName()" id="name">
+            <div id="nameError" class="error"> </div>
+            <input type="password">
+            <div class="item_13">
+                <div class="container_6">
+                    <input class="ch" type="checkbox">
+                    <div class="item_17">Я не робот</div>
+                    <div class="item_18"><img src="Снимок2.PNG"></div>
+                    
+                </div>
+                <div class="item_19">Конфиденциальность - Условия использования</div>
+            </div>
+            <div class="item_14">Зарегистрироваться</div>
+            <div class="item_15"><a class="a1" href="">Log in with Telegram</a></div>
+            <div class="item_16"></div>
+            <a href="">Уже есть аккаунт</a>
+        </div>
+    </div>   
+</form>
+
+
+
+    <script>
+        function validateName() {
+            var nameInput = document.getElementById("name");
+            var name = nameInput.value.trim();
+            var nameError = document.getElementById("nameError");
+
+            if (name === "") {
+                nameError.textContent = "Поле должно быть заполнено.";
+                nameInput.classList.add("error");
+            } else if (!/^[a-zA-Zа-яА-Я\s]+$/.test(name)) {
+                nameError.textContent = "Имя должно содержать только буквы и пробелы.";
+                nameInput.classList.add("error");
+            } else if (name.length > 50) {
+                nameError.textContent = "Имя не должно превышать 50 символов.";
+                nameInput.classList.add("error");
+            } else {
+                nameError.textContent = "";
+                nameInput.classList.remove("error");
+            }
+        }
+        </script>
+</body>
+</html>
